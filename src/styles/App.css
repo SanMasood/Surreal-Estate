@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Trochut&display=swap');
+
+*{
+font-family: 'Trochut', cursive;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+}
