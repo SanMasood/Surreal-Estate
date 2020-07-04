@@ -1,0 +1,22 @@
+.navBar{
+    display: flex;
+
+}
+
+.logoImage{
+    height: 130px;
+    width: auto;
+    padding: 10px;
+}
+.navbar-links{
+    margin:0;
+    padding: 0;
+    align-self: center;
+    
+}
+.navbar-links-item {
+    display: inline-block;
+    margin: 0;
+    padding: 1rem;
+    font-size:  2rem;
+}

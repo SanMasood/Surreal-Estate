@@ -7,5 +7,8 @@ font-family: 'Trochut', cursive;
 body{
   margin: 0;
   padding: 0;
-  background-color: grey;
+  background-color: rgb(184, 180, 180);
+}
+h2{
+  text-align: center;
 }
