@@ -1,25 +1,32 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { Router, Link } from 'react-router-dom';
+import { createMemoryHistory } from 'history';
+
 import '../styles/NavBar.css';
 import logo from '../assets/logo.png';
 
-function NavBar() {
+const NavBar = () => {
+  const history = createMemoryHistory();
   return (
-    <div className="navBar">
-      <img src={logo} alt="surreal-estate-logo" className="logoImage" />
+    <Router history = {history}>
+      <div className="navBar">
+        <img src={logo} alt="surreal-estate-logo" className="logoImage" />
 
-      <ul className="navbar-links">
-        
+        <ul className="navbar-links">
+
           <li className="navbar-links-item">
-              <a href="#">View Properties</a>
-          </li>
-          <li className ="navbar-links-item">
-              <a href="#">Add a Property</a>
+            <Link to="/">
+              View Properties
+            </Link>
           </li>
 
-      </ul>
+          <li className="navbar-links-item">
+            <Link to="add-property">Add Property</Link>
+          </li>
 
-    </div>
+        </ul>
+      </div>
+    </Router>
 
   );
 }
