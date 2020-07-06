@@ -1,7 +1,6 @@
 .navBar{
     display: flex;
     background-color: rgba(8, 18, 104, 0.829);
-
 }
 
 .logoImage{
@@ -9,19 +8,22 @@
     width: auto;
     padding: 10px;
 }
+
 .navbar-links{
     margin:0;
     padding: 0;
-    align-self: center;
-    
+    align-self: center;    
 }
+
 .navbar-links-item {
     display: inline-block;
     margin: 0;
     padding: 1rem;
     font-size:  2rem;       
 }
+
 .view-link, .add-link{
     color: white;
+    text-decoration: none;
 }
 

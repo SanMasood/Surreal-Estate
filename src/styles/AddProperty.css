@@ -19,6 +19,7 @@ form {
     border-radius: 20px;
     
 }
+
 input[type="text"] {
     padding: 10px;
     margin: 10px 0;
@@ -37,13 +38,19 @@ select {
     width: 100%;
     border: 0;
     padding:10px;
+    
     border-radius:10px;
-    box-shadow:0 0 4px rgba(0,0,0,0.3);
+    box-shadow: 0 0 4px rgba(0,0,0,0.3);
     background-color: rgba(255, 255, 255, 0.822);
     transition: .3s box-shadow;
-
 }
-
+.title input, .email input{
+    font-size: 70%;
+    
+}
+.city, .type, .bedrooms, .bathrooms, .price {
+    padding-bottom: 1rem;
+}
 select:hover {
     box-shadow:0 0 8px rgba(57, 103, 173, 0.5);
 }

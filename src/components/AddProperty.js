@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/AddProperty.css';
 
+const axios = require('axios');
+
 const AddProperty = () => {
   const initialState = {
     fields: {
@@ -18,7 +20,15 @@ const AddProperty = () => {
 
   const handleAddProperty = (event) => {
     event.preventDefault();
-    console.log(fields);
+    console.log(fields);// axios request
+
+    axios.post('http://localhost:4000/api/v1/PropertyListing',
+      { ...fields })
+      .then((response) => {
+        // console.log(response);
+        console.log(response.data);
+      })
+      .catch((error) => console.log(error));
   };
 
   const handleFieldChange = (event) => {
@@ -33,7 +43,8 @@ const AddProperty = () => {
 
         <div className="title">
           <label htmlFor="title" className="title-label">
-            Title:<br />
+            Title:
+            <br />
             <input
               id="title"
               name="title"
@@ -47,7 +58,9 @@ const AddProperty = () => {
 
         <div className="email">
           <label htmlFor="email">
-            Email: <br />
+            Email:
+            {' '}
+            <br />
             <input
               id="email"
               name="email"
@@ -190,8 +203,6 @@ const AddProperty = () => {
             </select>
           </label>
         </div>
-
-       
 
         <button type="submit">Add</button>
       </form>
