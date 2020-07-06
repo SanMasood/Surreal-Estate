@@ -1,3 +1,58 @@
 .addProperty{
-    padding: 2rem;
+    
+    font-size: 30px;
+}
+.addProperty h2{
+    color: rgb(20, 6, 83);
+}
+
+
+form {
+    box-sizing: border-box;
+    border: 2px solid rgba(1, 29, 122, 0.377);
+    padding: 20px;
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 20px;
+    
+}
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 0;
+    border-radius: 10px;
+    box-shadow:0 0 4px rgba(0,0,0,0.3);
+    transition: .3s box-shadow;
+    width: 90%;
+
+}
+input:hover {
+    box-shadow:0 0 8px rgba(57, 103, 173, 0.5);
+}
+
+select {
+    width: 100%;
+    border: 0;
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 0 4px rgba(0,0,0,0.3);
+    background-color: rgba(255, 255, 255, 0.822);
+    transition: .3s box-shadow;
+
+}
+
+select:hover {
+    box-shadow:0 0 8px rgba(57, 103, 173, 0.5);
+}
+
+.title-label{
+    padding: auto;    
+}
+
+button{
+    margin: 10px;
+    margin-left: 0px;
+    width: 30%;
+    height: 40px;
 }
