@@ -17,13 +17,13 @@ const NavBar = () =>
       <ul className="navbar-links">
 
         <li className="navbar-links-item">
-          <Link to="/">
+          <Link to="/" className="view-link">
             View Properties
           </Link>
         </li>
 
         <li className="navbar-links-item">
-          <Link to="/add-property">
+          <Link to="/add-property" className="add-link">
             Add Property
           </Link>
         </li>

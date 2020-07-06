@@ -1,9 +1,11 @@
 .addProperty{
-    
+    background-color: rgba(171, 197, 212, 0.377);    
     font-size: 30px;
 }
 .addProperty h2{
     color: rgb(20, 6, 83);
+    text-align: center;
+    margin: 0;
 }
 
 
@@ -24,7 +26,7 @@ input[type="text"] {
     border-radius: 10px;
     box-shadow:0 0 4px rgba(0,0,0,0.3);
     transition: .3s box-shadow;
-    width: 90%;
+    width: 97%;
 
 }
 input:hover {
