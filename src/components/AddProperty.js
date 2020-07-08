@@ -28,17 +28,17 @@ const AddProperty = () => {
   const handleAddProperty = (event) => {
     event.preventDefault();
     setAlert({ message: '', isSuccess: false });
-    console.log(fields);// axios request
+    // console.log(fields);// axios request
 
     axios.post('http://localhost:4000/api/v1/PropertyListing',
       { ...fields })
       .then((response) => {
         setAlert({ message: 'New Property Created!', isSuccess: true });
-        console.log(response.data);
+        // console.log(response.data);
       })
       .catch((error) => {
         setAlert({ message: 'Error creating new property', isSuccess: false });
-        console.log(error);
+        // console.log(error);
       });
   };
 
@@ -50,9 +50,9 @@ const AddProperty = () => {
 
     <div className="addProperty">
       <h2>Add a Property</h2>
-      <Alert message={alert.message} success={alert.success} />
 
       <form onSubmit={handleAddProperty}>
+        <Alert message={alert.message} success={alert.isSuccess} />
 
         <div className="title">
           <label htmlFor="title" className="title-label">
@@ -218,6 +218,7 @@ const AddProperty = () => {
         </div>
 
         <button type="submit">Add</button>
+
       </form>
     </div>
   );
