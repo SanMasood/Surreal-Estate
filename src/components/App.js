@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import '../styles/App.css';
 import Properties from './Properties';
 import AddProperty from './AddProperty';
+import Alert from './Alert';
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/" component={Properties} />
         <Route exact path="/add-property" component={AddProperty} />
+     
       </Switch>
+      
     </div>
   );
 }

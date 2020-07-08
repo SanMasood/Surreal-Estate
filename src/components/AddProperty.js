@@ -14,13 +14,13 @@ const AddProperty = () => {
       email: '',
       price: '<£50,000',
       bathrooms: '1',
-
-      alert: {
-        message: '',
-        isSuccess: false,
-      },
-
     },
+
+    alert: {
+      message: '',
+      isSuccess: false,
+    },
+
   };
   const [fields, setFields] = useState(initialState.fields);
   const [alert, setAlert] = useState(initialState.alert);
@@ -32,11 +32,12 @@ const AddProperty = () => {
 
     axios.post('http://localhost:4000/api/v1/PropertyListing',
       { ...fields })
-      .then((response) => {
+
+      .then(({ message }) => {
         setAlert({ message: 'New Property Created!', isSuccess: true });
         // console.log(response.data);
       })
-      .catch((error) => {
+      .catch(({ message }) => {
         setAlert({ message: 'Error creating new property', isSuccess: false });
         // console.log(error);
       });
@@ -50,9 +51,9 @@ const AddProperty = () => {
 
     <div className="addProperty">
       <h2>Add a Property</h2>
+      <Alert message={alert.message} success={alert.isSuccess} />
 
       <form onSubmit={handleAddProperty}>
-        <Alert message={alert.message} success={alert.isSuccess} />
 
         <div className="title">
           <label htmlFor="title" className="title-label">

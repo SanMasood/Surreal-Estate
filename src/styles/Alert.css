@@ -1,12 +1,22 @@
 .Alert{
+    border: 2px solid rgb(184, 181, 181);
     box-sizing: border-box;
+    display: inline;   
     
 }
 
 .Alert.alert-success{
-    border: 2px solid green;
+    color: black;
+    font-size: smaller;
+    background-color: rgba(197, 255, 197, 0.774);
+    text-align: center;
 }
 
 .Alert.alert-error{
-    border: 2px solid red;
+    color: black;
+    font-size: smaller;
+    background-color: rgba(255, 143, 123, 0.774);
+    text-align: center;
+
+    
 }
