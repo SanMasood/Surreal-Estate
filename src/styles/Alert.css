@@ -1,0 +1,12 @@
+.Alert{
+    box-sizing: border-box;
+    
+}
+
+.Alert.alert-success{
+    border: 2px solid green;
+}
+
+.Alert.alert-error{
+    border: 2px solid red;
+}

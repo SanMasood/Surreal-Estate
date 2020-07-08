@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Alert from './Alert';
 import '../styles/AddProperty.css';
 
 const axios = require('axios');
@@ -14,21 +15,31 @@ const AddProperty = () => {
       price: '<£50,000',
       bathrooms: '1',
 
+      alert: {
+        message: '',
+        isSuccess: false,
+      },
+
     },
   };
   const [fields, setFields] = useState(initialState.fields);
+  const [alert, setAlert] = useState(initialState.alert);
 
   const handleAddProperty = (event) => {
     event.preventDefault();
+    setAlert({ message: '', isSuccess: false });
     console.log(fields);// axios request
 
     axios.post('http://localhost:4000/api/v1/PropertyListing',
       { ...fields })
       .then((response) => {
-        // console.log(response);
+        setAlert({ message: 'New Property Created!', isSuccess: true });
         console.log(response.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        setAlert({ message: 'Error creating new property', isSuccess: false });
+        console.log(error);
+      });
   };
 
   const handleFieldChange = (event) => {
@@ -39,6 +50,8 @@ const AddProperty = () => {
 
     <div className="addProperty">
       <h2>Add a Property</h2>
+      <Alert message={alert.message} success={alert.success} />
+
       <form onSubmit={handleAddProperty}>
 
         <div className="title">
