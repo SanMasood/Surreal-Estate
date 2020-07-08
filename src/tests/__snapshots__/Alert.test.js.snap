@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render error or success if message props is empty 1`] = `
+Object {
+  "asFragment": [Function],
+}
+`;
+
+exports[`renders error message if property not created 1`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  >
+    Error!
+  </div>
+</DocumentFragment>
+`;
+
+exports[`renders success message if property created 1`] = `
+<DocumentFragment>
+  <div
+    class="Alert alert-error"
+  >
+    Success!
+  </div>
+</DocumentFragment>
+`;
