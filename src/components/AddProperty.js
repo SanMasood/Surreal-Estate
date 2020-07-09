@@ -12,7 +12,7 @@ const AddProperty = () => {
       type: 'flat',
       bedrooms: '1',
       email: '',
-      price: '<£50,000',
+      price: '50,000',
       bathrooms: '1',
     },
 

@@ -6,6 +6,7 @@ import '../styles/App.css';
 import Properties from './Properties';
 import AddProperty from './AddProperty';
 import Alert from './Alert';
+import PropertyCard from './PropertyCard';
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Route exact path="/add-property" component={AddProperty} />
      
       </Switch>
+      <PropertyCard />
+
       
     </div>
   );

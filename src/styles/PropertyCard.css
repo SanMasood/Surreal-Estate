@@ -1,0 +1,17 @@
+.property-card{
+    border: 1px solid grey;
+    margin: 5px;
+    padding: 0 auto;
+    background-color: rgba(194, 199, 243, 0.377);
+    border-radius: 5px;;
+}
+.property-card > *{
+    padding: 5px;
+    font-weight: bolder;
+}
+.email-button{
+    border-radius: 10px;
+    background-color: rgba(156, 156, 247, 0.479);
+    border: none;
+    
+}
