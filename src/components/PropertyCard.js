@@ -3,31 +3,35 @@ import PropTypes from 'prop-types';
 
 import '../styles/PropertyCard.css';
 
-const PropertyCard = (props) => (
+const PropertyCard = ({
+  title, type, city, bathrooms, bedrooms, price,
+}) => (
   <div className="property-card">
-    <div className="title">
+    <div className="property-card-title">
       Title:
-      {props.title}
+      {title}
     </div>
-    <div className="type">
+    <div className="property-card-type">
+      Type:
+      {' '}
+      {type}
+    </div>
+    <div className="property-card-city">
       City:
-      {props.type}
+      {city}
     </div>
-    <div className="city">
-      City:
-      {props.city}
-    </div>
-    <div className="bathrooms">
+    <div className="property-card-bathrooms">
       Bathrooms:
-      {props.bathrooms}
+      {bathrooms}
     </div>
-    <div className="bedrooms">
+    <div className="property-card-bedrooms">
       Bedrooms:
-      {props.bedrooms}
+      {bedrooms}
     </div>
-    <div className="price">
+    <div className="property-card-price">
       Price: £
-      {props.price}
+      {' '}
+      {price}
     </div>
 
     <button className="email-button">Email</button>
@@ -36,11 +40,11 @@ const PropertyCard = (props) => (
 );
 
 PropertyCard.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   type: PropTypes.string,
   bathrooms: PropTypes.number,
   bedrooms: PropTypes.number,
   price: PropTypes.string,
-  city: PropTypes.string.isRequired,
+  city: PropTypes.string,
 };
 export default PropertyCard;

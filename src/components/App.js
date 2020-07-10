@@ -17,11 +17,10 @@ function App() {
       <Switch>
         <Route exact path="/" component={Properties} />
         <Route exact path="/add-property" component={AddProperty} />
-     
+
       </Switch>
       <PropertyCard />
 
-      
     </div>
   );
 }
