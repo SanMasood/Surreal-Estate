@@ -1,0 +1,11 @@
+.Properties {
+    padding: 0.5rem;
+
+}
+.Properties > .col {
+display: inline-block;
+width: 33%;
+padding: 0.5rem;
+box-sizing: border-box;
+
+}
