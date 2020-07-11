@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: #bdbaba8a;
     position: absolute;
     height: 100%;
     overflow: auto;
@@ -29,5 +29,8 @@
     margin-left: 200px;
     padding: 1px 16px;
     height: 100%;
+  }
+  .sidebar{
+    float: left;
   }
   

@@ -13,7 +13,7 @@ const SideBar = () => (
       <a href="#">Sheffield</a>
     </div>
   </div> */
-  <div>
+  <div className="sidebar">
 
     <ul className="sidebar-links">
       <h3>Filter By City:</h3>

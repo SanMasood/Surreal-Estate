@@ -21,7 +21,6 @@ function App() {
         <Route exact path="/add-property" component={AddProperty} />
 
       </Switch>
-      <PropertyCard />
 
     </div>
   );

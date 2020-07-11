@@ -26,17 +26,23 @@ const Properties = () => {
   }, []);
 
   return (
+   <div className="test">
+       <SideBar />
     <div className="Properties">
-        
+       
+       
       <h2>Properties Page</h2>
       <br />
       <div className="properties-alert"><Alert message={alert.message} /></div>
-     <SideBar />
+     
       {properties.map((property) => (
         <div key={property._id} className="col">
           <PropertyCard {...property} />
         </div>
       ))}
+      
+        
+    </div>
     </div>
   );
 };
