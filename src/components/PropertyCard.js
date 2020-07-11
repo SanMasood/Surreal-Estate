@@ -21,7 +21,7 @@ const PropertyCard = ({
       {city}
     </div>
     <div className="property-card-bathrooms">
-    &#xf2cd;
+    
       Bathrooms:
       {bathrooms}
     </div>
@@ -43,8 +43,8 @@ const PropertyCard = ({
 PropertyCard.propTypes = {
   title: PropTypes.string,
   type: PropTypes.string,
-  bathrooms: PropTypes.number,
-  bedrooms: PropTypes.number,
+  bathrooms: PropTypes.string,
+  bedrooms: PropTypes.string,
   price: PropTypes.string,
   city: PropTypes.string,
 };

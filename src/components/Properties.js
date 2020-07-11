@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useLocation } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import PropertyCard from './PropertyCard';
 import '../styles/Properties.css';
@@ -25,24 +26,29 @@ const Properties = () => {
       .catch(({ message }) => { setAlert({ message: 'Error retrieving properties!' }); });
   }, []);
 
+  const { search } = useLocation();
+  useEffect(() => {
+    axios.get(`http://localhost:4000/api/v1/PropertyListing${search}`)
+      .then((response) => { setProperties(response.data); })
+      .catch((err) => console.error(err));
+  }, [search]);
+
   return (
-   <div className="test">
-       <SideBar />
-    <div className="Properties">
-       
-       
-      <h2>Properties Page</h2>
-      <br />
-      <div className="properties-alert"><Alert message={alert.message} /></div>
-     
-      {properties.map((property) => (
-        <div key={property._id} className="col">
-          <PropertyCard {...property} />
-        </div>
-      ))}
-      
-        
-    </div>
+    <div className="test">
+      <SideBar />
+      <div className="Properties">
+
+        <h2>Properties Page</h2>
+        <br />
+        <div className="properties-alert"><Alert message={alert.message} /></div>
+
+        {properties.map((property) => (
+          <div key={property._id} className="col">
+            <PropertyCard {...property} />
+          </div>
+        ))}
+
+      </div>
     </div>
   );
 };

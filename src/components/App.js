@@ -5,9 +5,6 @@ import NavBar from './NavBar';
 import '../styles/App.css';
 import Properties from './Properties';
 import AddProperty from './AddProperty';
-import Alert from './Alert';
-import PropertyCard from './PropertyCard';
-import SideBar from './SideBar';
 
 function App() {
   return (
