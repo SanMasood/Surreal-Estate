@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLocation } from 'react';
 import axios from 'axios';
 import PropertyCard from './PropertyCard';
 import '../styles/Properties.css';
+import '../styles/SideBar.css';
 import Alert from './Alert';
+import SideBar from './SideBar';
 
 const Properties = () => {
   const initialState = {
@@ -25,9 +27,11 @@ const Properties = () => {
 
   return (
     <div className="Properties">
-      Properties Page
+        
+      <h2>Properties Page</h2>
       <br />
       <div className="properties-alert"><Alert message={alert.message} /></div>
+     <SideBar />
       {properties.map((property) => (
         <div key={property._id} className="col">
           <PropertyCard {...property} />

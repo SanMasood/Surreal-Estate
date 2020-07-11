@@ -21,6 +21,7 @@ const PropertyCard = ({
       {city}
     </div>
     <div className="property-card-bathrooms">
+    &#xf2cd;
       Bathrooms:
       {bathrooms}
     </div>
