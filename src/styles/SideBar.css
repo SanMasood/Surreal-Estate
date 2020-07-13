@@ -6,13 +6,13 @@
     position: absolute;
     height: 100%;
     overflow: auto;
-  }
+}
   .sidebar-links a {
     display: block;
     color: black;
     padding: 16px;
     text-decoration: none;
-  }
+}
   
   /* Active/current link */
  /* .sidebar a.active {
@@ -20,17 +20,30 @@
     color: white;
   }*/
   
-  /* Links on mouse-over */
   .sidebar-links a:hover {
     background-color: rgba(8, 18, 104, 0.705);
     color: white;
-  }
+}
   div.Properties {
     margin-left: 200px;
     padding: 1px 16px;
     height: 100%;
-  }
+}
   .sidebar{
     float: left;
-  }
-  
+}
+.sidebar-form{
+  display: flex;
+  display: inline-block;
+  position: relative;
+}
+
+.sidebar-form .search-field{
+    width: 80%;
+
+}
+.sidebar-form button{
+width:80%;
+height: 30px;
+margin-left: 10%;
+}

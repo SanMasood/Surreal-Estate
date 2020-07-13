@@ -53,7 +53,7 @@ const AddProperty = () => {
       <h2>Add a Property</h2>
       <Alert message={alert.message} success={alert.isSuccess} />
 
-      <form onSubmit={handleAddProperty}>
+      <form className="add-property" onSubmit={handleAddProperty}>
 
         <div className="title">
           <label htmlFor="title" className="title-label">

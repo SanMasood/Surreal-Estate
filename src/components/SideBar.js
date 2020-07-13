@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import qs from 'qs';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 
 import '../styles/SideBar.css';
 
 const SideBar = () => {
-    const { search } = useLocation();
+  const { search } = useLocation();
+  const history = useHistory();
+  const [query, setQuery] = useState('');
 
-    const buildQueryString = (operation, valueObj) => {
-    
-
+  const buildQueryString = (operation, valueObj) => {
     const currentQueryParams = qs.parse(search, { ignoreQueryPrefix: true });
 
     const newQueryParams = {
       ...currentQueryParams,
-      [operation]: JSON.stringify(valueObj),
+      [operation]: JSON.stringify({
+          ...JSON.parse(currentQueryParams[operation] || '{}' ),
+          ...valueObj,
+      }),
     };
     return qs.stringify(newQueryParams, { addQueryPrefix: true, encode: false });
+  };
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const newQueryParams = buildQueryString('query', { title: { $regex: query } });
+    history.push(newQueryParams);
+    console.log(query);
   };
 
   return (
@@ -24,6 +33,17 @@ const SideBar = () => {
     <div className="sidebar">
 
       <ul className="sidebar-links">
+
+        <form className="sidebar-form" onSubmit={handleSearch}>
+          <input
+            className="search-field"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+
+          />
+          <button type="submit">Search</button>
+        </form>
         <h3>Filter By City:</h3>
 
         <li className="sidebar-links-item">
