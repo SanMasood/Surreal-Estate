@@ -47,23 +47,23 @@ const SideBar = () => {
         <h3>Filter By City:</h3>
 
         <li className="sidebar-links-item">
-          <Link to={'/?query={"city":"Manchester"}'} className="manc-link">
+          <Link to={buildQueryString('query', { city: 'Manchester' })} className="manc-link">
             Manchester
           </Link>
         </li>
 
         <li className="sidebar-links-item">
-          <Link to={'/?query={"city":"Leeds"}'} className="leeds-link">
+          <Link to={buildQueryString('query', { city: 'Leeds' })} className="leeds-link">
             Leeds
           </Link>
         </li>
         <li className="sidebar-links-item">
-          <Link to={'/?query={"city":"Liverpool"}'} className="liverpool-link">
+          <Link to={buildQueryString('query', { city: 'Liverpool' })} className="liverpool-link">
             Liverpool
           </Link>
         </li>
         <li className="sidebar-links-item">
-          <Link to={'/?query={"city":"Sheffield"}'} className="sheffield-link">
+          <Link to={buildQueryString('query', { city: 'Sheffield' })}className="sheffield-link">
             Sheffield
           </Link>
         </li>

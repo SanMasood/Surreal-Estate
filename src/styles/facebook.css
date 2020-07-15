@@ -1,0 +1,22 @@
+/*.facebook-login-class{
+    
+    display: inline-block;
+    justify-content: baseline;    
+    width: 190px;
+    margin: 25%;   
+}
+.facebook-logout-class button{
+    display: inline-block;
+    justify-content: baseline;    
+    width: 190px;
+    margin-top: 15%;  
+
+}*/
+
+.facebook-buttons{
+    align-self: center;
+    width: 40%;
+    height: auto;
+    
+    
+}
