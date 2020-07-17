@@ -9,7 +9,8 @@
     padding: 5px;
     font-weight: bolder;
 }
-.email-button{
+.email-button, .save-button{
+    display: inline-block;
     border-radius: 10px;
     background-color: rgba(156, 156, 247, 0.479);
     border: none;    

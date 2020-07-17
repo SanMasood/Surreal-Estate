@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import '../styles/PropertyCard.css';
 
 const PropertyCard = ({
-  title, type, city, bathrooms, bedrooms, price,
+  _id, userId, title, type, city, bathrooms, bedrooms, price, onSaveProperty,
 }) => (
   <div className="property-card">
     <div className="property-card-title">
@@ -21,7 +21,7 @@ const PropertyCard = ({
       {city}
     </div>
     <div className="property-card-bathrooms">
-    
+
       Bathrooms:
       {bathrooms}
     </div>
@@ -35,7 +35,20 @@ const PropertyCard = ({
       {price}
     </div>
 
-    <button className="email-button">Email</button>
+    <button className="email-button" type="submit">Email</button>
+    {userId && (
+    <button
+      href="#"
+      className="save-button"
+      type="submit"
+      onClick={() => onSaveProperty(_id)}
+
+    >
+      <i className="fas fa-star" />
+      Save
+
+    </button>
+    )}
 
   </div>
 );
@@ -47,5 +60,8 @@ PropertyCard.propTypes = {
   bedrooms: PropTypes.string,
   price: PropTypes.string,
   city: PropTypes.string,
+  userId: PropTypes.string,
+  _id: PropTypes.string,
+  onSaveProperty: PropTypes.func,
 };
 export default PropertyCard;

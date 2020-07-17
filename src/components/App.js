@@ -16,18 +16,18 @@ function App() {
 
   }; */
   const [userId, setUserId] = useState('');
-  //const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = (response) => {
     console.log(response);
 
     setUserId(response.id);
-    //setIsLoggedIn(true);
+    // setIsLoggedIn(true);
   };
 
   const handleLogout = () => {
     window.FB.logout(() => setUserId(''));
-    //setIsLoggedIn(false);
+    // setIsLoggedIn(false);
   };
 
   return (
@@ -38,7 +38,13 @@ function App() {
       <NavBar onLogin={handleLogin} userId={userId} onLogout={handleLogout} />
 
       <Switch>
-        <Route exact path="/" component={Properties} />
+        <Route
+          exact
+          path="/"
+          //component={Properties}
+          render={(props) => (
+            <Properties {...props} userId={userId} />)}
+        />
         <Route exact path="/add-property" component={AddProperty} />
 
       </Switch>
