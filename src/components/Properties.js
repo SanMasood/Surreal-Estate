@@ -36,7 +36,7 @@ const Properties = ({ userId }) => {
   }, [search]);
 
   const handleSaveProperty = (propertyId) => {
-    axios.post('http://localhost:4000/api/v1/PropertyListing/Favourite',
+    axios.post('http://localhost:4000/api/v1/Favourite',
       {
         propertyListing: propertyId,
         fbUserId: userId,
@@ -56,7 +56,7 @@ const Properties = ({ userId }) => {
           <div key={property._id} className="col">
             <PropertyCard
               {...property}
-              userId = {userId}
+              userId={userId}
               onSaveProperty={handleSaveProperty}
 
             />

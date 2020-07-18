@@ -5,21 +5,15 @@ import NavBar from './NavBar';
 import '../styles/App.css';
 import Properties from './Properties';
 import AddProperty from './AddProperty';
+import SavedProperties from './SavedProperties';
 
 function App() {
-  /* const initialState = {
-    auth: false,
-    name: '',
-    picture: '',
-
-    userID: "10157220117560069", //fields later?
-
-  }; */
+ 
   const [userId, setUserId] = useState('');
   // const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = (response) => {
-    console.log(response);
+    //console.log(response);
 
     setUserId(response.id);
     // setIsLoggedIn(true);
@@ -46,6 +40,12 @@ function App() {
             <Properties {...props} userId={userId} />)}
         />
         <Route exact path="/add-property" component={AddProperty} />
+
+        <Route
+          exact
+          path="/saved-properties"
+          render={(props) => <SavedProperties {...props} userId={userId} />}
+        />
 
       </Switch>
 

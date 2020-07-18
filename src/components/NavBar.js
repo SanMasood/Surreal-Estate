@@ -30,6 +30,12 @@ const NavBar = ({
           Add Property
         </Link>
       </li>
+      <li className="navbar-links-item">
+        <Link to="/saved-properties" className="saved-link">
+          Saved Properties
+        </Link>
+
+      </li>
 
     </ul>
     <div className="facebook-buttons">
