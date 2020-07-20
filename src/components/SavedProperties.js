@@ -17,16 +17,35 @@ const SavedProperties = ({ userId }) => {
   useEffect(() => {
     axios
       .get(`http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userId}"}&populate=propertyListing`)
-      .then(( response ) => {
+      .then((response) => {
         console.log(response.data);
         setSavedProperties(response.data);
-       
-        console.log(userId);
+
+        //console.log(userId);
       })
 
       .catch((err) => console.log(err));
-
   }, [userId]);
+
+  const handleRemoveProperty = (propertyId) => {
+    axios
+      .delete(`http://localhost:4000/api/v1/Favourite/${propertyId}`)
+
+      .then((deleteresponse) => {
+          console.log(deleteresponse.data);
+        axios
+          .get(`http://localhost:4000/api/v1/Favourite?query={"fbUserId":"${userId}"}&populate=propertyListing`)
+
+          .then((getresponse) => {
+            setSavedProperties(getresponse.data);
+            console.log(getresponse.data);
+            
+          })
+          .catch((err) => console.log(err));
+      })
+
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div className="saved-properties">
@@ -39,6 +58,7 @@ const SavedProperties = ({ userId }) => {
             key={savedproperty._id}
             {...savedproperty}
             title={savedproperty.title}
+            onRemoveProperty={handleRemoveProperty}
           />
 
         ))}

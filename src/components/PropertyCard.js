@@ -45,7 +45,6 @@ const PropertyCard = ({
       onClick={() => onSaveProperty(_id)}
 
     >
-      <i className="fas fa-star" />
       Save
 
     </button>
